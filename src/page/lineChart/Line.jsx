@@ -1,5 +1,3 @@
- 
- 
 import React from "react";
 import { Box, useTheme } from "@mui/material";
 
@@ -224,10 +222,10 @@ const data = [
   },
 ];
 
-const Line = ({isDahboard = false}) => {
+const Line = ({ isDahboard = false }) => {
   const theme = useTheme();
   return (
-    <Box sx={{ height: isDahboard?  "280px"  :  "75vh" }}>
+    <Box sx={{ height: isDahboard ? "280px" : "75vh" }}>
       <ResponsiveLine
         theme={{
           // @ts-ignore
@@ -339,20 +337,18 @@ const Line = ({isDahboard = false}) => {
         axisTop={null}
         axisRight={null}
         axisBottom={{
- 
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDahboard? null : "transportation",
+          legend: isDahboard ? null : "transportation",
           legendOffset: 36,
           legendPosition: "middle",
         }}
         axisLeft={{
-       
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDahboard? null : "Count",
+          legend: isDahboard ? null : "Count",
           legendOffset: -45,
           legendPosition: "middle",
         }}

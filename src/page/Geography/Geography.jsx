@@ -1,7 +1,16 @@
-import React from 'react'
+import { Box } from "@mui/material";
 
-export default function Geography() {
+import Geo from "./geo";
+import Header from "../../components/Header";
+
+const Geography = () => {
   return (
-    <div>Geography Page</div>
-  )
-}
+    <Box>
+      <Header title="Geography" subTitle="Simple Geography Chart" />
+
+      <Geo />
+    </Box>
+  );
+};
+
+export default Geography;
