@@ -1,7 +1,17 @@
-import React from 'react'
+import { Box} from "@mui/material";
+import Bar from "./bar";
+import Header from "../../components/Header";
 
-export default function BarChart() {
+const BarChart = () => {
   return (
-    <div>barChart Page</div>
-  )
-}
+    <Box>
+      <Header
+        title="Bar Chart"
+        subTitle="The minimum wage in Germany, France and Spain (EUR/month)"
+      />
+      <Bar />
+    </Box>
+  );
+};
+
+export default BarChart;

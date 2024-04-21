@@ -1,7 +1,15 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import Line from "./Line";
+import Header from "../../components/Header";
 
-export default function LineChart() {
+const LineChart = () => {
   return (
-    <div>lineChart Page</div>
-  )
-}
+    <Box>
+      <Header title="Line Chart" subTitle="Simple Line Chart" />
+
+      <Line />
+    </Box>
+  );
+};
+
+export default LineChart;
