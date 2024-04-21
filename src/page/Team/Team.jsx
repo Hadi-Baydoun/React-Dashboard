@@ -1,6 +1,7 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { rows } from "./data";
 import { Box, Typography, useTheme } from "@mui/material";
+import Header from "../../components/Header";
 import {
   AdminPanelSettingsOutlined,
   LockOpenOutlined,
@@ -89,6 +90,10 @@ export default function Team() {
   ];
   return (
     <Box style={{ height: 600, width: "98%", mx: "auto" }}>
+      <Header
+          title={"TEAM"}
+          subTitle={"Managing The Team Members"}
+        />
       <DataGrid
         rows={rows}
         // @ts-ignore

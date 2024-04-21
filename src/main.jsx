@@ -22,6 +22,7 @@ import BarChart from "./page/barChart/BarChart";
 // @ts-ignore
 import LineChart from "./page/lineChart/LineChart";
 import Geography from "./page/Geography/Geography";
+import NotFound from "./page/notFound/NotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,9 +38,9 @@ const router = createBrowserRouter(
       <Route path="bar" element={<BarChart />} />
       <Route path="line" element={<LineChart />} />
       <Route path="geography" element={<Geography />} />
-      
+
+      <Route path="*" element={<NotFound />} />
     </Route>
-    
   )
 );
 
