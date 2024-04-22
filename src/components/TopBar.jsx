@@ -4,7 +4,6 @@ import {
   InputBase,
   Stack,
   Toolbar,
-  Typography,
   styled,
   useTheme,
 } from "@mui/material";
@@ -13,13 +12,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar from "@mui/material/AppBar";
 import { alpha } from "@mui/material/styles";
-import { Delete } from "@mui/icons-material";
+import { Link } from 'react-router-dom';
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import Button from "@mui/material/Button";
+
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
@@ -179,7 +178,7 @@ const TopBar = ({ open, handleDrawerOpen, setMode }) => {
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem component={Link} to="/">Logout</MenuItem>
           </Menu>
         </Stack>
       </Toolbar>

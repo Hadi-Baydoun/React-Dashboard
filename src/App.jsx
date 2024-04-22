@@ -1,14 +1,11 @@
 import * as React from "react";
 import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-
 import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
 import { getDesignTokens } from "./theme";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -21,6 +18,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
+  const location = useLocation(); 
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -40,12 +38,16 @@ export default function MiniDrawer() {
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <TopBar
-          open={open}
-          handleDrawerOpen={handleDrawerOpen}
-          setMode={setMode}
-        />
-        <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+        {location.pathname !== "/" && (
+          <>
+            <TopBar
+              open={open}
+              handleDrawerOpen={handleDrawerOpen}
+              setMode={setMode}
+            />
+            <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+          </>
+        )}
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
           <Outlet />

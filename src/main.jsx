@@ -23,11 +23,15 @@ import BarChart from "./page/barChart/BarChart";
 import LineChart from "./page/lineChart/LineChart";
 import Geography from "./page/Geography/Geography";
 import NotFound from "./page/notFound/NotFound";
+import SignInForm from "./page/signIn/SignInForm";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route index element={<Dashboard />} />
+      <Route path="/" element={<SignInForm />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      
       <Route path="team" element={<Team />} />
       <Route path="contacts" element={<Contacts />} />
       <Route path="invoices" element={<Invoices />} />
